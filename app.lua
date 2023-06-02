@@ -39,14 +39,7 @@ app:get("/categories", function()
   return { status = 200, json = categories }
 end)
 
-app:get("/categories/:id", function(self)
-  local category = categories[tonumber(self.params.id)]
-  if category then
-    return { status = 200, json = { category } }
-  else
-    return { status = 404, json = { message = "Category not found" } }
-  end
-end)
+
 
 
 
