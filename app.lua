@@ -32,7 +32,7 @@ local app = lapis.Application()
 app:post("/categories", json_params(function(self)
   local category = Category.new(#categories + 1, self.params.name)
   categories[category.id] = category
-  return { status = 201, json = { category } }
+  return { status = 201, json = categories  }
 end))
 
 app:get("/categories", function()
